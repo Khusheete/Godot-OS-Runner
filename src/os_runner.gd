@@ -57,7 +57,7 @@ func run(p_path: String, p_args: PackedStringArray) -> ProgramHandle:
 
 
 func execute_command(p_command: String, p_arguments: PackedStringArray) -> bool:
-	var program_handle: ProgramHandle = OSRunner.run(
+	var program_handle: ProgramHandle = run(
 		p_command, p_arguments
 	)
 	program_handle.stdout_line_printed.connect(func(p_line: String): print(p_line)) 
