@@ -42,6 +42,10 @@ extends Node
 const ProgramInstance: Script = preload("program_instance.gd")
 
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
 func run(p_path: String, p_args: PackedStringArray) -> ProgramHandle:
 	var instance: ProgramInstance = ProgramInstance.new()
 	instance.program_path = p_path
